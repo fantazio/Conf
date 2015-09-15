@@ -206,13 +206,15 @@ alias gits="git status"
 
 PS1='\[\e[1;35m\][$?]\[\e[1;34m\]·\[\e[0;32m\]\u\[\e[1;34m\]·\[\e[1;36m\]\W\[\e[1;34m\]·\[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
 
+alias mlfi="rlwrap mlfi"
+alias mlfip="rlwrap mlfip"
 PATH=$HOME/bin:$PATH
 export LANG=en_US.UTF-8
 export LC_TYPE=en_US.UTF-8
 
-export CAML_LD_LIBRARY_PATH="$HOME/.opam/4.03.0+trunk/lib/stublibs"
-export PERL5LIB="$HOME/.opam/4.03.0+trunk/lib/perl5"
-export CAML_LD_LIBRARY_PATH="$HOME/.opam/4.03.0+trunk/lib/stublibs"
-export OCAML_TOPLEVEL_PATH="$HOME/.opam/4.03.0+trunk/lib/toplevel"
-export PATH="$HOME/.opam/4.03.0+trunk/bin:/$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin:/usr/games:/usr/local/games"
+export CAML_LD_LIBRARY_PATH="/home/cdesouza/.opam/4.03.0+trunk/lib/stublibs"
+export PERL5LIB="/home/cdesouza/.opam/4.03.0+trunk/lib/perl5"
+export CAML_LD_LIBRARY_PATH="/home/cdesouza/.opam/4.03.0+trunk/lib/stublibs"
+export OCAML_TOPLEVEL_PATH="home/cdesouza/.opam/4.03.0+trunk/lib/toplevel"
+export PATH="/home/cdesouza/.opam/4.03.0+trunk/bin:/home/cdesouza/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin:/usr/games:/usr/local/games"
 tmux
