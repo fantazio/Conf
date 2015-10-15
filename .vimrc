@@ -4,10 +4,11 @@
 " Avertissement par flash (visual bell) plutôt que par beep
 set vb
 
+set background=dark
 " Active la coloration syntaxique
 syntax on
 " Utiliser le jeu de couleurs standard
-colorscheme evening
+colorscheme solarized
 
 " Affiche la position du curseur 'ligne,colonne'
 set ruler
