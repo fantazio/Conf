@@ -99,7 +99,6 @@ autocmd BufNewfile,BufRead *.csml set textwidth=0
 "set listchars=tab:>-,trail:-
 
 " Les recherches ne sont pas 'case sensitives'
-set ignorecase
 " Mettre en surligné les expressions recherchées
 set hlsearch
 
