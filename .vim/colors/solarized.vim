@@ -379,16 +379,23 @@ endif
 if &background == "light"
     let s:temp03      = s:base03
     let s:temp02      = s:base02
-    let s:temp01      = s:base01
-    let s:temp00      = s:base00
     let s:base03      = s:base3
     let s:base02      = s:base2
-    let s:base01      = s:base1
-    let s:base00      = s:base0
-    let s:base0       = s:temp00
-    let s:base1       = s:temp01
     let s:base2       = s:temp02
     let s:base3       = s:temp03
+    let s:base00      = s:base1
+    let s:tempblue    = s:blue
+    let s:tempred     = s:red
+    let s:blue        = s:cyan
+    let s:cyan        = s:base0
+    let s:base1       = s:tempred
+    let s:yellow      = s:green
+    let s:green       = s:base01
+    let s:tempor      = s:orange
+    let s:orange      = s:tempblue
+    let s:base0       = s:tempblue
+    let s:base01      = s:tempblue
+    let s:violet      = s:magenta
     if (s:back != "NONE")
         let s:back    = s:base03
     endif
@@ -615,21 +622,21 @@ else
     exe "hi! SpecialKey" .s:fmt_bold   .s:fg_base00 .s:bg_base02
     exe "hi! NonText"    .s:fmt_bold   .s:fg_base00 .s:bg_none
 endif
-exe "hi! StatusLine"     .s:fmt_revb   .s:fg_cyan   .s:bg_none
-exe "hi! StatusLineNC"   .s:fmt_revb   .s:fg_base0  .s:bg_none
+exe "hi! StatusLine"     .s:fmt_revb   .s:fg_base3   .s:bg_none
+exe "hi! StatusLineNC"   .s:fmt_revb   .s:fg_base2  .s:bg_none
 exe "hi! Visual"         .s:fmt_none   .s:fg_base01 .s:bg_base03 .s:fmt_revbb
 exe "hi! Directory"      .s:fmt_none   .s:fg_blue   .s:bg_none
-exe "hi! ErrorMsg"       .s:fmt_revr   .s:fg_magenta    .s:bg_none
+exe "hi! ErrorMsg"       .s:fmt_revr   .s:fg_base00    .s:bg_none
 exe "hi! IncSearch"      .s:fmt_stnd   .s:fg_orange .s:bg_none
-exe "hi! Search"         .s:fmt_revr   .s:fg_yellow .s:bg_none
+exe "hi! Search"         .s:fmt_revb   .s:fg_base00 .s:bg_none
 exe "hi! MoreMsg"        .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! ModeMsg"        .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! LineNr"         .s:fmt_none   .s:fg_base01 .s:bg_base02
 exe "hi! Question"       .s:fmt_bold   .s:fg_cyan   .s:bg_none
 if ( has("gui_running") || &t_Co > 8 )
-    exe "hi! VertSplit"  .s:fmt_none   .s:fg_base0 .s:bg_base0
+    exe "hi! VertSplit"  .s:fmt_none   .s:fg_base2 .s:bg_base0
 else
-    exe "hi! VertSplit"  .s:fmt_revb  .s:fg_base0 .s:bg_none
+    exe "hi! VertSplit"  .s:fmt_revb  .s:fg_base2 .s:bg_none
 endif
 exe "hi! Title"          .s:fmt_bold   .s:fg_orange .s:bg_none
 exe "hi! VisualNOS"      .s:fmt_stnd   .s:fg_none   .s:bg_base02 .s:fmt_revbb
@@ -675,7 +682,7 @@ exe "hi! TabLineFill"    .s:fmt_undr   .s:fg_base0  .s:bg_base02  .s:sp_base0
 exe "hi! TabLineSel"     .s:fmt_undr   .s:fg_base01 .s:bg_base2   .s:sp_base0  .s:fmt_revbbu
 exe "hi! CursorColumn"   .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! CursorLine"     .s:fmt_uopt   .s:fg_none   .s:bg_base02  .s:sp_base1
-exe "hi! ColorColumn"    .s:fmt_none   .s:fg_none   .s:bg_base02
+exe "hi! ColorColumn"    .s:fmt_bold   .s:fg_base00 .s:bg_green
 exe "hi! Cursor"         .s:fmt_none   .s:fg_base03 .s:bg_base0
 hi! link lCursor Cursor
 

@@ -1,79 +1,78 @@
 " /etc/vim/vimrc ou ~/.vimrc
-" Fichier de configuration de Vim
+" Vim configuration file
 
-" Avertissement par flash (visual bell) plutôt que par beep
+" Flash (visual bell) instead of beeping
 set vb
 
-set background=dark
-" Active la coloration syntaxique
+" Syntax highliting
 syntax on
-" Utiliser le jeu de couleurs standard
+
+set background=light
 colorscheme solarized
 
-" Affiche la position du curseur 'ligne,colonne'
+" Display cursor position 'line,column'
 set ruler
-" Affiche une barre de status en bas de l'écran
+" Status bar
 set laststatus=2
-" Contenu de la barre de status
+" Staus bar content
 set statusline=%<%f%h%m%r%=%l,%c\ %P
 
-" Largeur mexi du texte inséré
-" '72' permet de wrapper automatiquement à 72 caractères
-" '0' désactive la fonction
+" Inserted txt max width
+" 'n' when n > 0 automatically wrap up to n chars
+" '0' disable
 set textwidth=0
 
-" Wrappe à 72 caractères avec la touche '#'
-" map # {v}! par 72
-" Wrappe et justifie à 72 caractères avec la touche '@'
-" map @ {v}! par 72j
+" Wrap to n chars with <char>
+" map <char> {v}! par n
+" Wrap and justifies to n chars with <char>
+" map <char> {v}! par nj
 
-" Ne pas assurer la compatibilité avec l'ancien Vi
+" Do not ensure old Vi compatibility
 set nocompatible
-" Nombre de colonnes
+" Nb columns
 " set columns=80
-" Nombre de commandes dans l'historique
+" Nb commands stored in history
 set history=50
-" Options du fichier ~/.viminfo
+" ~/.viminfo options
 set viminfo='20,\"50
-" Active la touche Backspace
+" Set backspace propagation up to 2 chars
 set backspace=2
-" Autorise le passage d'une ligne à l'autre avec les flèches gauche et droite
+" Allow switching from a line to another with left/right arrows
 set whichwrap=<,>,[,]
-" Garde toujours une ligne visible à l'écran au dessus du curseur
-set scrolloff=1
-" Affiche les commandes dans la barre de status
+" Always keep n visible lines above the cursorr
+"set scrolloff=n
+" Display commands in status bar
 set showcmd
-" Affiche la paire de parenthèses
+" Display parentheses match
 set showmatch
-" Essaye de garder le curseur dans la même colonne quand on change de ligne
+" Try to keep the cursor ate the same column when switching line
 set nostartofline
-" Option de la complétion automatique
+" Ato-completion option
 set wildmode=list:longest
-" Par défaut, ne garde pas l'indentation de la ligne précédente
+" Default behaviour: do not look at the previous line when starting a new one
 " quand on commence une nouvelle ligne
 set noautoindent
-" Options d'indentation pour un fichier C
+" Indentation options for C files
 set cinoptions=(0
-" Affiche les caractères spéciaux
+" Show special chars
 set list listchars=tab:»·,trail:°,extends:»,eol:·
-" Colonne 120 surlignée
-set colorcolumn=120
+" Highlight column 100
+set colorcolumn=100
 
-" xterm-debian est un terminal couleur
+" xterm-debian is a colored term
 if &term =~ "xterm-debian" || &term =~ "xterm-xfree86"
     set t_Co=16
     set t_Sf=[3%dm
     set t_Sb=[4%dm
 endif
 
-" Quand on fait de la programmation, on veut qu'il n'y ait jamais de
-" vraies tabulations insérées mais seulement 4 espaces
+" Not tabs, only spaces. Tabs replaced with 2 spaces
 autocmd BufNewfile,BufRead *.c set expandtab
-autocmd BufNewfile,BufRead *.c set tabstop=4
+autocmd BufNewfile,BufRead *.c set tabstop=2
 autocmd BufNewfile,BufRead *.h set expandtab
-autocmd BufNewfile,BufRead *.h set tabstop=4
+autocmd BufNewfile,BufRead *.h set tabstop=2
 autocmd BufNewfile,BufRead *.cpp set expandtab
-autocmd BufNewfile,BufRead *.cpp set tabstop=4
+autocmd BufNewfile,BufRead *.cpp set tabstop=2
 
 autocmd BufNewfile,BufRead *.ml set expandtab
 autocmd BufNewfile,BufRead *.ml set tabstop=2
@@ -88,32 +87,20 @@ autocmd BufNewfile,BufRead *.csml set tabstop=2
 autocmd BufNewfile,BufRead *.csml set filetype=ocaml
 autocmd BufNewfile,BufRead *.csml set textwidth=0
 
+
 "autocmd BufRead *.tex,*.latex set spell
 "autocmd BufRead *.tex,*.latex set spelllang=en
 
 " autocmd BufRead *.tex,*.latex set tw=70
 " autocmd BufRead *.tex,*.latex set nocin
-" Décommentez les 2 lignes suivantes si vous voulez avoir les tabulations et
-" les espaces marqués en caractères bleus
-"set list
-"set listchars=tab:>-,trail:-
 
-" Les recherches ne sont pas 'case sensitives'
-" Mettre en surligné les expressions recherchées
+" Highlight searched expressions
 set hlsearch
 
-" Fichier d'aide
-set helpfile=$VIMRUNTIME/doc/help.txt.gz
+" Help
+" set helpfile=$VIMRUNTIME/doc/help.txt.gz
 
-" Le découpage des folders se base sur l'indentation
-" set foldmethod=indent
-" 12 niveaux d'indentation par défaut pour les folders
-" set foldlevel=12
-
-" Police de caractère pour Gvim qui supporte le symbole euro
-" set guifont=-misc-fixed-medium-r-semicondensed-*-*-111-75-75-c-*-iso8859-15
-
-" Change les couleurs selon le caractere fonce/clair du fond
+" Color changes depending on background
 map <F11> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 nnoremap <F10> :nohls<CR>
 map tn :tabnew<CR>
