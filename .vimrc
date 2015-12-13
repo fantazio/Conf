@@ -7,7 +7,7 @@ set vb
 " Syntax highliting
 syntax on
 
-set background=light
+set background=dark
 colorscheme solarized
 
 " Display cursor position 'line,column'
