@@ -107,9 +107,9 @@ alias egrep='egrep --color=auto'              # show differences in colour
 alias fgrep='fgrep --color=auto'              # show differences in colour
 #
 # Some shortcuts for different directory listings
-alias ls='ls -hF --color=tty'                 # classify files in colour
-alias dir='ls --color=auto --format=vertical'
-alias vdir='ls --color=auto --format=long'
+alias ls='ls -hFG'                 # classify files in colour
+alias dir='ls -G --format=vertical'
+alias vdir='ls -G --format=long'
 alias ll='ls -alF'                            # long list
 alias la='ls -A'                              # all but . and ..
 alias l='ls -CF'                              #
@@ -204,7 +204,7 @@ alias gits="git status"
 # 
 # alias cd=cd_func
 
-PS1='\[\e[1;35m\][$?]\[\e[1;34m\]·\[\e[0;32m\]\u\[\e[1;34m\]·\[\e[1;36m\]\W\[\e[1;34m\]·\[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
+PS1='\[\e[1;35m\][$?]\[\e[1;34m\]·\[\e[0;32m\]fantasio\[\e[1;34m\]·\[\e[1;36m\]\W\[\e[1;34m\]·\[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
 
 alias mlfi="rlwrap mlfi"
 alias mlfip="rlwrap mlfip"
@@ -212,9 +212,6 @@ PATH=$HOME/bin:$PATH
 export LANG=en_US.UTF-8
 export LC_TYPE=en_US.UTF-8
 
-export CAML_LD_LIBRARY_PATH="/home/cdesouza/.opam/4.03.0+trunk/lib/stublibs"
-export PERL5LIB="/home/cdesouza/.opam/4.03.0+trunk/lib/perl5"
-export CAML_LD_LIBRARY_PATH="/home/cdesouza/.opam/4.03.0+trunk/lib/stublibs"
-export OCAML_TOPLEVEL_PATH="home/cdesouza/.opam/4.03.0+trunk/lib/toplevel"
-export PATH="/home/cdesouza/.opam/4.03.0+trunk/bin:/home/cdesouza/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin:/usr/games:/usr/local/games"
+eval 'opam config env'
 tmux
+clear
