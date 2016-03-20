@@ -107,9 +107,9 @@ alias egrep='egrep --color=auto'              # show differences in colour
 alias fgrep='fgrep --color=auto'              # show differences in colour
 #
 # Some shortcuts for different directory listings
-alias ls='ls -hFG'                 # classify files in colour
-alias dir='ls -G --format=vertical'
-alias vdir='ls -G --format=long'
+alias ls='ls --color=auto -hF'                 # classify files in colour
+alias dir='ls --color=auto --format=vertical'
+alias vdir='ls --color=auto --format=long'
 alias ll='ls -alF'                            # long list
 alias la='ls -A'                              # all but . and ..
 alias l='ls -CF'                              #
@@ -213,5 +213,6 @@ export LANG=en_US.UTF-8
 export LC_TYPE=en_US.UTF-8
 
 eval 'opam config env'
+clear
 tmux
 clear
