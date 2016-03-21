@@ -204,13 +204,22 @@ alias gits="git status"
 # 
 # alias cd=cd_func
 
+
+# epita related stuff
+
+alias epita=". ~/epita/scripts/cdepita.sh"
+alias scia=". ~/epita/scripts/cdepita.sh scia"
+
+alias minizinc="~/epita/scia/ppco/MiniZincIDE-2.0.12-bundle-linux-x86-64/MiniZincIDE"
+
+
+
 PS1='\[\e[1;35m\][$?]\[\e[1;34m\]·\[\e[0;32m\]fantasio\[\e[1;34m\]·\[\e[1;36m\]\W\[\e[1;34m\]·\[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
 
-alias mlfi="rlwrap mlfi"
-alias mlfip="rlwrap mlfip"
 PATH=$HOME/bin:$PATH
 export LANG=en_US.UTF-8
 export LC_TYPE=en_US.UTF-8
+
 
 eval 'opam config env'
 clear
