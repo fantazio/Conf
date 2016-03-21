@@ -215,6 +215,8 @@ alias goto=". ~/scripts/goto.sh"
 alias epita=". ~/scripts/cdepita.sh"
 alias scia=". ~/scripts/cdepita.sh scia"
 
+alias matlab="~/epita/scia/mlea/MATLAB_R2015b/bin/matlab"
+
 alias minizinc="~/epita/scia/ppco/MiniZincIDE-2.0.12-bundle-linux-x86-64/MiniZincIDE"
 
 
