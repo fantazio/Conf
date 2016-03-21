@@ -205,10 +205,15 @@ alias gits="git status"
 # alias cd=cd_func
 
 
+# Custom scripts
+
+alias goto=". ~/scripts/goto.sh"
+
+
 # epita related stuff
 
-alias epita=". ~/epita/scripts/cdepita.sh"
-alias scia=". ~/epita/scripts/cdepita.sh scia"
+alias epita=". ~/scripts/cdepita.sh"
+alias scia=". ~/scripts/cdepita.sh scia"
 
 alias minizinc="~/epita/scia/ppco/MiniZincIDE-2.0.12-bundle-linux-x86-64/MiniZincIDE"
 
